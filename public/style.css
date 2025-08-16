@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(255, 255, 255);
+
+    justify-content: center;
+    
+}
+
+.user{
+    color: black;
+    font-style: italic;
+    
+}
+h1,.content{
+    background-color:  yellow;
+}
+div,article{
+    background-color: antiquewhite;
+}
