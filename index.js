@@ -22,10 +22,10 @@ let posts = [
 app.get("/", (req, res) => {
     res.render("index.ejs", { posts }); // ✅ Pass data to template
 });
-app.get("/posts/new",(req,res)=>{
+app.get("/new",(req,res)=>{
     res.render("new.ejs")
 })
-app.get("/posts/:id",(req,res)=>{
+app.get("//:id",(req,res)=>{
     let {id} = req.params
      let post =posts.find((p)=>id===p.id)
      if (!post) {
@@ -34,14 +34,14 @@ app.get("/posts/:id",(req,res)=>{
      res.render("show.ejs",{post})
      
 })
-app.post("/posts",(req,res)=>{ 
+app.post("/",(req,res)=>{ 
     let {username,content}=req.body
     const  id = uuidv4()
     posts.push({ id,username,content}) 
     res.redirect("/posts")
     
 })
-app.patch("/posts/:id",(req,res)=>{
+app.patch("/:id",(req,res)=>{
     let {id} = req.params
     let newContent =req.body.content
 
@@ -52,13 +52,13 @@ app.patch("/posts/:id",(req,res)=>{
           post.content= newContent
         res.redirect("/posts")
 })
-app.get("/posts/:id/edit",(req,res)=>{
+app.get("/:id/edit",(req,res)=>{
        let {id} = req.params
        let post =posts.find((p)=>id===p.id)
        res.render("edit.ejs",{post})
 
 })
-app.delete("/posts/:id",(req,res)=>{
+app.delete("/:id",(req,res)=>{
       let {id} = req.params
      posts =posts.filter((p)=>id!==p.id)
      res.redirect("/posts")
