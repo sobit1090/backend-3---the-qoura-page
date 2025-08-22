@@ -19,7 +19,7 @@ let posts = [
     { id:uuidv4(),username: "mayank", content: "avansh is a talented and passionate web developer from Ambalika Institute of Management & Technology, Lucknow. With a strong foundation in HTML, CSS, JavaScript, and modern frameworks like React.js and Node.js, he has worked on multiple projects that demonstrate both creativity and technical expertise." }
 ];
 
-app.get("/posts", (req, res) => {
+app.get("/", (req, res) => {
     res.render("index.ejs", { posts }); // ✅ Pass data to template
 });
 app.get("/posts/new",(req,res)=>{
