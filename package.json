@@ -9,12 +9,20 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "method-override": "^3.0.0",
     "path": "^0.12.7",
     "uuid": "^11.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sobit1090/backend-3---the-qoura-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sobit1090/backend-3---the-qoura-page/issues"
+  },
+  "homepage": "https://github.com/sobit1090/backend-3---the-qoura-page#readme",
+  "description": ""
 }
