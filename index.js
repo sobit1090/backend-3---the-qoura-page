@@ -1,4 +1,4 @@
-const { log } = require("console");
+require("console");
 const express = require("express");
 const app = express();
 const port = 5500;
@@ -8,15 +8,15 @@ const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public"))); // ✅ Correct
+app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 let posts = [
-    { id:uuidv4(),username: "sobit", content: "coding using java" },
-    { id:uuidv4(),username: "avansh", content: "coding using cpp" },
-    { id:uuidv4(),username: "mayank", content: "coding using javascript" }
+    { id:uuidv4(),username: "sobit", content: "Sobit is a dedicated and enthusiastic web developer from Ambalika Institute of Management & Technology, Lucknow. He has a solid grasp of HTML, CSS, JavaScript, and React.js, with growing expertise in backend technologies. Sobit has successfully developed projects like a Sorting Visualizer and To-Do List application, showcasing both problem-solving skills and a creative approach to coding. His passion for learning and building practical solutions makes him a reliable and innovative developer." },
+    { id:uuidv4(),username: "avansh", content: "mayank is a dedicated and enthusiastic web developer from Ambalika Institute of Management & Technology, Lucknow. He has a solid grasp of HTML, CSS, JavaScript, and React.js, with growing expertise in backend technologies. Sobit has successfully developed projects like a Sorting Visualizer and To-Do List application, showcasing both problem-solving skills and a creative approach to coding. His passion for learning and building practical solutions makes him a reliable and innovative developer." },
+    { id:uuidv4(),username: "mayank", content: "avansh is a talented and passionate web developer from Ambalika Institute of Management & Technology, Lucknow. With a strong foundation in HTML, CSS, JavaScript, and modern frameworks like React.js and Node.js, he has worked on multiple projects that demonstrate both creativity and technical expertise." }
 ];
 
 app.get("/posts", (req, res) => {
