@@ -61,7 +61,7 @@ app.get("/:id/edit",(req,res)=>{
 app.delete("/:id",(req,res)=>{
       let {id} = req.params
      posts =posts.filter((p)=>id!==p.id)
-     res.redirect("/posts")
+     res.redirect("/")
 })
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
