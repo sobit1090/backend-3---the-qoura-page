@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.get("/new",(req,res)=>{
     res.render("new.ejs")
 })
-app.get("//:id",(req,res)=>{
+app.get("/show/:id",(req,res)=>{
     let {id} = req.params
      let post =posts.find((p)=>id===p.id)
      if (!post) {
@@ -34,14 +34,14 @@ app.get("//:id",(req,res)=>{
      res.render("show.ejs",{post})
      
 })
-app.post("/",(req,res)=>{ 
+app.post("/new",(req,res)=>{ 
     let {username,content}=req.body
     const  id = uuidv4()
     posts.push({ id,username,content}) 
-    res.redirect("/posts")
+    res.redirect("/")
     
 })
-app.patch("/:id",(req,res)=>{
+app.patch("/edit/:id",(req,res)=>{
     let {id} = req.params
     let newContent =req.body.content
 
@@ -50,7 +50,7 @@ app.patch("/:id",(req,res)=>{
         return res.status(404).send("Post not found");
     }
           post.content= newContent
-        res.redirect("/posts")
+        res.redirect("/")
 })
 app.get("/:id/edit",(req,res)=>{
        let {id} = req.params
