@@ -41,7 +41,7 @@ app.post("/new",(req,res)=>{
     res.redirect("/")
     
 })
-app.patch("/edit/:id",(req,res)=>{
+app.patch("/:id",(req,res)=>{
     let {id} = req.params
     let newContent =req.body.content
 
