@@ -13,8 +13,8 @@
         <div>
             <h3 class="user">@<%=post.username%></h3>
             <h4 class="content"><%=post.content%> </h4>
-                <a href="https://backend-3-the-qoura-page-2.onrender.com/<%= post.id %>">See in detail</a>
-                <a href="https://backend-3-the-qoura-page-2.onrender.com/<%= post.id %>/edit">Edit</a>
+                <a href="show/<%= post.id %>">See in detail</a>
+                <a href="/<%= post.id %>/edit">Edit</a>
                  <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
             <button>delete post</button>
         </form>
